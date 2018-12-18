@@ -1,10 +1,19 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import React, { Component } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 class GetPage extends Component {
-    render(){
-        return <Text>Get Page</Text>
-    }
+  render() {
+    return (
+      <View>
+        <Text>Get Page</Text>
+        <TouchableOpacity onPress={() => this.props.backToMainPage("Main")}>
+          <Text style={{ margin: 10, backgroundColor: "red" }}>
+            Back to Main Page
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 }
 
-export default GetPage
+export default GetPage;

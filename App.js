@@ -22,13 +22,13 @@ class App extends Component {
     const { pageNeedsTobeRendered } = this.state;
 
     if (pageNeedsTobeRendered === "Get") {
-      return <GetPage />;
+      return <GetPage backToMainPage={this.openPage}/>;
     } else if (pageNeedsTobeRendered === "Post") {
-      return <PostPage />;
+      return <PostPage backToMainPage={this.openPage}/>;
     } else if (pageNeedsTobeRendered === "Put") {
-      return <PutPage />;
+      return <PutPage backToMainPage={this.openPage}/>;
     } else if (pageNeedsTobeRendered === "Delete") {
-      return <DeletePage />;
+      return <DeletePage backToMainPage={this.openPage}/>;
     }
 
     return (
@@ -39,15 +39,15 @@ class App extends Component {
           <Text style={Styles.textButton}>Open Get Page</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.openPostPage("Post")}>
+        <TouchableOpacity onPress={() => this.openPage("Post")}>
           <Text style={Styles.textButton}>Open Post Page</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.openPutPage("Put")}>
+        <TouchableOpacity onPress={() => this.openPage("Put")}>
           <Text style={Styles.textButton}>Open Put Page</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => this.openDeletePage("Delete")}>
+        <TouchableOpacity onPress={() => this.openPage("Delete")}>
           <Text style={Styles.textButton}>Open Delete Page</Text>
         </TouchableOpacity>
       </View>
