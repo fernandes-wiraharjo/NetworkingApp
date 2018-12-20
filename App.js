@@ -4,6 +4,7 @@ import GetPage from "./src/GetPage";
 import PostPage from "./src/PostPage";
 import PutPage from "./src/PutPage";
 import DeletePage from "./src/DeletePage";
+import GetNotesPage from "./src/GetNotes";
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +30,8 @@ class App extends Component {
       return <PutPage backToMainPage={this.openPage}/>;
     } else if (pageNeedsTobeRendered === "Delete") {
       return <DeletePage backToMainPage={this.openPage}/>;
+    }else if (pageNeedsTobeRendered === "GetNotes") {
+      return <GetNotesPage backToMainPage={this.openPage}/>;
     }
 
     return (
@@ -49,6 +52,10 @@ class App extends Component {
 
         <TouchableOpacity onPress={() => this.openPage("Delete")}>
           <Text style={Styles.textButton}>Open Delete Page</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => this.openPage("GetNotes")}>
+          <Text style={Styles.textButton}>Open GetNotes Page</Text>
         </TouchableOpacity>
       </View>
     );
